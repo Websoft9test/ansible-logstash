@@ -6,17 +6,16 @@
 - name: enable ipaddress
   lineinfile:
     path: /etc/logstash/logstash.yml
-    regexp: '#http.host: "127.0.0.1"'
-    line: 'http.host: 0.0.0.0'
-    state: present
-
+    regexp: '# http.host: "127.0.0.1"'
+    line: 'http.host: "0.0.0.0"'
+    state: absent
 
 - name: http.port
   lineinfile:
     path: /etc/logstash/logstash.yml
-    regexp: '#http.port: 9600-9700'
+    regexp: '# http.port: 9600-9700'
     line: 'http.port: 9600-9700'
-    state: present
+    state: absent
 
 - name: run logstash
   shell: /usr/share/logstash/bin/logstash -e 'input { stdin { } } output { stdout {} }'
@@ -32,13 +31,14 @@
 - name: set soft link
   shell: |
     ln -sf /var/log/logstash  /data/log/
+    ln -sf /var/lib/logstash  /data/
     ln -sf /etc/logstash/logstash.yml /data/config/
 
 # Check version,
 # must use sudo sh -c to solve the no-root permission
 - block:
-  - name: Check Logstash Version
-    shell: sudo sh -c "rabbitmqctl status | grep 'Logstash version' 1>> /data/logs/install_version.txt"
+  - name: Check logstash Version
+    shell: sudo sh -c "echo `rpm -qa|grep logstash |sed -n 1p` 1>> /data/logs/install_version.txt"
 
 # check service state
 - name: Check Logstash Service
