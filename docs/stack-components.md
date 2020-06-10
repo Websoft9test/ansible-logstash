@@ -1,13 +1,13 @@
 # Parameters
 
-The RabbitMQ deployment package contains a sequence software (referred to as "components") required for RabbitMQ to run. The important information such as the component name, installation directory path, configuration file path, port, version, etc. are listed below.
+The Logstash deployment package contains a sequence software (referred to as "components") required for Logstash to run. The important information such as the component name, installation directory path, configuration file path, port, version, etc. are listed below.
 
 ## Path
 
-### RabbitMQ
+### Logstash
 
-RabbitMQ installation directory:  */data/rabbitmq*  
-RabbitMQ logs directory:  */data/logs/rabbitmq*  
+Logstash installation directory:  */data/logstash*  
+Logstash logs directory:  */data/logs/logstash*  
 
 ### Nginx
 
@@ -31,7 +31,7 @@ You can run the cmd `netstat -tunlp` to list all used ports, and we list the fol
 
 | Name | Number | Use |  Necessity |
 | --- | --- | --- | --- |
-| HTTP | 8161 | HTTP requests for RabbitMQ Console| Required |
+| HTTP | 8161 | HTTP requests for Logstash Console| Required |
 | HTTPS | 5672 | epmd | Optional |
 | TCP | 55672 | Erlang distribution | Optional |
 
@@ -60,6 +60,6 @@ docker -v
 yum info erlang
 apt show erlang
 
-# RabbitMQ version
-rabbitmqctl status | grep RabbitMQ*
+# Logstash version
+rabbitmqctl status | grep Logstash*
 ```

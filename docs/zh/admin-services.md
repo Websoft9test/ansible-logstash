@@ -1,17 +1,17 @@
 # 服务启停
 
-使用由Websoft9提供的 RabbitMQ 部署方案，可能需要用到的服务如下：
+使用由Websoft9提供的 Logstash 部署方案，可能需要用到的服务如下：
 
-### RabbitMQ
+### Logstash
 
 ```shell
-sudo systemctl start rabbitmq-server
-sudo systemctl stop rabbitmq-server
-sudo systemctl restart rabbitmq-server
-sudo systemctl status rabbitmq-server
+sudo systemctl start logstash-server
+sudo systemctl stop logstash-server
+sudo systemctl restart logstash-server
+sudo systemctl status logstash-server
 
-# you can use this debug mode if RabbitMQ service can't run
-rabbitmq-server console
+# you can use this debug mode if Logstash service can't run
+logstash-server console
 ```
 
 ### MySQL

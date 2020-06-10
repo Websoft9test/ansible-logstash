@@ -4,12 +4,12 @@ You use the **SSH** to connect your Server and run the command `cat /credentials
 
 ![](https://libs.websoft9.com/Websoft9/DocsPicture/zh/common/catdbpassword-websoft9.png)
 
-These accounts are required for RabbitMQ image installation and configuration
+These accounts are required for Logstash image installation and configuration
 
-## RabbitMQ
+## Logstash
 
-* RabbitMQ administrator username: `admin`
-* RabbitMQ administrator password: stored in the file of your server */credentials/password.txt*
+* Logstash administrator username: `admin`
+* Logstash administrator password: stored in the file of your server */credentials/password.txt*
   > If there no password.txt exist, the administrator password is `admin`
 
 ## MySQL

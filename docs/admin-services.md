@@ -1,17 +1,17 @@
 # Start or Stop the Services
 
-These commands you must know when you using the RabbitMQ of Websoft9
+These commands you must know when you using the Logstash of Websoft9
 
-### RabbitMQ
+### Logstash
 
 ```shell
-sudo systemctl start rabbitmq-server
-sudo systemctl stop rabbitmq-server
-sudo systemctl restart rabbitmq-server
-sudo systemctl status rabbitmq-server
+sudo systemctl start logstash-server
+sudo systemctl stop logstash-server
+sudo systemctl restart logstash-server
+sudo systemctl status logstash-server
 
-# you can use this debug mode if RabbitMQ service can't run
-rabbitmq-server console
+# you can use this debug mode if Logstash service can't run
+logstash-server console
 ```
 
 ### MySQL
