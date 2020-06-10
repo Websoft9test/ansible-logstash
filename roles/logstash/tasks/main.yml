@@ -8,14 +8,16 @@
     path: /etc/logstash/logstash.yml
     regexp: '# http.host: "127.0.0.1"'
     line: 'http.host: "0.0.0.0"'
-    state: absent
+    state: present
+    backrefs: yes
 
 - name: http.port
   lineinfile:
     path: /etc/logstash/logstash.yml
     regexp: '# http.port: 9600-9700'
     line: 'http.port: 9600-9700'
-    state: absent
+    state: present
+    backrefs: yes
 
 #- name: run logstash
 #  shell: /usr/share/logstash/bin/logstash -e 'input { stdin { } } output { stdout {} }'
